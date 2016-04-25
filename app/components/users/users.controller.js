@@ -3,15 +3,15 @@
     
     class UsersController {
         
-        constructor($scope,$timeout, usersFactory, versions){
+        constructor($scope,$timeout, UsersService, versions){
 
-            console.log("usersFactory");
-            console.log(usersFactory);
+            console.log("UsersService");
+            console.log(UsersService);
             console.log("versions");
             console.log(versions);
 
             this.versions = versions;
-            usersFactory.getPeople().then((response) => {
+            UsersService.getPeople().then((response) => {
                 console.log("--- succcess ---");
                 console.log(response);
                 this.users = response.data;
@@ -24,7 +24,7 @@
         
     }
 
-    UsersController.$inject = ['$scope', '$timeout', 'usersFactory', 'versions'];
+    UsersController.$inject = ['$scope', '$timeout', 'UsersService', 'versions'];
 
     angular.module('app.components.users').controller('UsersController', UsersController);
 
