@@ -1,16 +1,15 @@
 (function () {
     'user strict';
 
-    angular.module('app.components.users').service('UsersService',UsersService);
+    class UsersService {
 
-    UsersService.$inject = ['$q', '$http'];
+        constructor($q, $http){
+            this.$q = $q;
+            this.$http = $http;
+        }
 
-    function UsersService($q, $http) {
-
-        this.getPeople = getPeople;
-
-        function getPeople() {
-            return $http.get('server/people.json').then(function (response) {
+        getPeople() {
+            return this.$http.get('server/people.json').then(function (response) {
                 return response;
             }, function (error) {
                 console.log("--- error ---");
@@ -20,5 +19,8 @@
 
     }
 
+    UsersService.$inject = ['$q', '$http'];
+
+    angular.module('app.components.users').service('UsersService',UsersService);
 
 }());

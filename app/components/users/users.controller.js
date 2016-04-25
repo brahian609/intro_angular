@@ -11,6 +11,7 @@
             console.log(versions);
 
             this.versions = versions;
+
             UsersService.getPeople().then((response) => {
                 console.log("--- succcess ---");
                 console.log(response);
