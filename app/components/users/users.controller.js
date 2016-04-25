@@ -8,15 +8,17 @@
             console.log("usersFactory");
             console.log(usersFactory);
             console.log("versions");
-            console.log(versions);  
+            console.log(versions);
 
             this.versions = versions;
+            usersFactory.getPeople().then((response) => {
+                console.log("--- succcess ---");
+                console.log(response);
+                this.users = response.data;
+            });
 
-            this.users = [
-                {name: 'Brahian', last_name: 'Giraldo', money: 20000},
-                {name: 'Pedro', last_name: 'Medina', money: 15000},
-                {name: 'Pablo', last_name: 'Peres', money: 10000}
-            ];
+            console.log("this.users");
+            console.log(this.users);
 
         }
         
