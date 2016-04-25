@@ -1,0 +1,26 @@
+{
+  "name": "intro_angular",
+  "version": "1.0.0",
+  "description": "introducción Angularjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brahian609/intro_angular.git"
+  },
+  "keywords": [
+    "angular",
+    "angularjs"
+  ],
+  "author": "brahian609",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brahian609/intro_angular/issues"
+  },
+  "homepage": "https://github.com/brahian609/intro_angular#readme",
+  "dependencies": {
+    "angular": "^1.5.5"
+  }
+}
