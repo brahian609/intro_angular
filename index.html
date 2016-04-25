@@ -16,6 +16,28 @@
 
     </div>
 
+    <div ng-init="users=[{name: 'Brahian', last_name: 'Giraldo', money: 20000},{name: 'Pedro', last_name: 'Medina', money: 15000},{name: 'Pablo', last_name: 'Peres', money: 10000}]">
+
+        Filter: <input type="text" ng-model="myFilter">
+        Order: <input type="text" ng-model="order" size="10">
+        Type: <input type="checkbox"
+                     ng-checked="true"
+                     ng-model="type"
+                     ng-true-value="''"
+                     ng-false-value="'-'">
+        {{type}}
+
+
+        <ul>
+            <li ng-repeat="user in users | filter: myFilter | orderBy: type + order track by $index">
+                {{ user.name | uppercase }}
+                {{ user.last_name | uppercase }}
+                {{ user.money | currency }}
+            </li>
+        </ul>
+
+    </div>
+
 
 <script src="node_modules/angular/angular.js"></script>
 
