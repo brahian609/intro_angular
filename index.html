@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
     <meta charset="UTF-8">
     <title>Intro AngularJs</title>
 </head>
 <body>
+
+    <div ng-init="nombres=['Alfredo','Brahian','Diana','Mateo','Jeronimo']">
+
+        <h3>Iterando a través de datos con ng-repeat</h3>
+
+        <ul>
+            <li ng-repeat="nombre in nombres track by $index" ng-bind="nombre"></li>
+        </ul>
+
+    </div>
+
+
+<script src="node_modules/angular/angular.js"></script>
 
 </body>
 </html>
