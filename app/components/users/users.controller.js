@@ -12,11 +12,7 @@
 
             this.versions = versions;
 
-            UsersService.getPeople().then((response) => {
-                console.log("--- succcess ---");
-                console.log(response);
-                this.users = response.data;
-            });
+            UsersService.getPeople().then(({data}) => this.users = data);
 
             console.log("this.users");
             console.log(this.users);

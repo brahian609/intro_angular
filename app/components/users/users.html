@@ -26,6 +26,23 @@
                      ng-true-value="''"
                      ng-false-value="'-'">
         {{type}}
+        
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in ctrl.users track by $index">
+                <td ng-bind="user.first_name"></td>
+                <td ng-bind="user.last_name"></td>
+                <td ng-bind="user.email"></td>
+            </tr>
+            </tbody>
+        </table>
 
 
         <!--<ul>
