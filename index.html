@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <title>Intro AngularJs</title>
 </head>
-<body>
+<body ng-controller="UsersController as ctrl">
 
     <div ng-init="nombres=['Alfredo','Brahian','Diana','Mateo','Jeronimo']">
 
@@ -16,7 +16,7 @@
 
     </div>
 
-    <div ng-init="users=[{name: 'Brahian', last_name: 'Giraldo', money: 20000},{name: 'Pedro', last_name: 'Medina', money: 15000},{name: 'Pablo', last_name: 'Peres', money: 10000}]">
+    <div>
 
         Filter: <input type="text" ng-model="myFilter">
         Order: <input type="text" ng-model="order" size="10">
@@ -29,7 +29,7 @@
 
 
         <ul>
-            <li ng-repeat="user in users | filter: myFilter | orderBy: type + order track by $index">
+            <li ng-repeat="user in ctrl.users | filter: myFilter | orderBy: type + order track by $index">
                 {{ user.name | uppercase }}
                 {{ user.last_name | uppercase }}
                 {{ user.money | currency }}
@@ -40,6 +40,8 @@
 
 
 <script src="node_modules/angular/angular.js"></script>
+<script src="app.module.js"></script>
+<script src="app.controller.js"></script>
 
 </body>
 </html>
