@@ -1,7 +1,7 @@
 (function () {
     'user strict';
 
-    angular.module('app').controller('UsersController', UsersController);
+    angular.module('app.components.users').controller('UsersController', UsersController);
 
     UsersController.$inject = ['$scope', '$timeout'];
 
