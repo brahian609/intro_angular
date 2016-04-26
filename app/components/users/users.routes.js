@@ -18,9 +18,9 @@
             })
             .state('users.profile', {
                 url: '/profile/:id',
-                controller: 'UsersController',
-                controllerAs: 'ctrl',
-                templateUrl: 'components/users/users.html'
+                controller: 'UserProfileController',
+                controllerAs: 'ctrlProfile',
+                templateUrl: 'components/users/components/userProfile/userProfile.html'
             });
     }
 

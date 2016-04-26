@@ -9,8 +9,26 @@
         }
 
         getPeople() {
-            return this.$http.get('server/people.json').then(function (response) {
+            return this.$http({
+                method: 'GET',
+                url: 'server/people.json'
+            }).then(function (response) {
                 return response;
+            }, function (error) {
+                console.log("--- error ---");
+                console.log(error);
+            });
+        }
+
+        getUser(id = null) {
+            return this.$http({
+                method: 'GET',
+                url: 'server/people.json'
+            }).then(function ({data}) {
+                var user = data.filter(function (user) {
+                    return user.id === Number(id);
+                })[0];
+                return user;
             }, function (error) {
                 console.log("--- error ---");
                 console.log(error);

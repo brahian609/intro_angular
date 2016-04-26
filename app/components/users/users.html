@@ -1,60 +1,63 @@
 <div>
 
-    <h3>Versiones:</h3>
-    <ul>
-        <li ng-bind="ctrl.versions.dev"></li>
-        <li ng-bind="ctrl.versions.production"></li>
-    </ul>
-
-    <div ng-init="nombres=['Alfredo','Brahian','Diana','Mateo','Jeronimo']">
-
-        <h3>Iterando a través de datos con ng-repeat</h3>
-
+    <ui-view>
+        <h3>Versiones:</h3>
         <ul>
-            <li ng-repeat="nombre in nombres track by $index" ng-bind="nombre"></li>
+            <li ng-bind="ctrl.versions.dev"></li>
+            <li ng-bind="ctrl.versions.production"></li>
         </ul>
 
-    </div>
+        <div ng-init="nombres=['Alfredo','Brahian','Diana','Mateo','Jeronimo']">
 
-    <div>
+            <h3>Iterando a través de datos con ng-repeat</h3>
 
-        Filter: <input type="text" ng-model="myFilter">
-        Order: <input type="text" ng-model="order" size="10">
-        Type: <input type="checkbox"
-                     ng-checked="true"
-                     ng-model="type"
-                     ng-true-value="''"
-                     ng-false-value="'-'">
-        {{type}}
+            <ul>
+                <li ng-repeat="nombre in nombres track by $index" ng-bind="nombre"></li>
+            </ul>
 
-        <div class="clear">&nbsp;</div>
-        
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Apellidos</th>
-                <th>Email</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="user in ctrl.users track by $index">
-                <td ng-bind="user.first_name"></td>
-                <td ng-bind="user.last_name"></td>
-                <td ng-bind="user.email"></td>
-            </tr>
-            </tbody>
-        </table>
+        </div>
+
+        <div>
+
+            Filter: <input type="text" ng-model="myFilter">
+            Order: <input type="text" ng-model="order" size="10">
+            Type: <input type="checkbox"
+                         ng-checked="true"
+                         ng-model="type"
+                         ng-true-value="''"
+                         ng-false-value="'-'">
+            {{type}}
+
+            <div class="clear">&nbsp;</div>
+
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-dblclick="ctrl.goProfile(user.id)"
+                    ng-repeat="user in ctrl.users track by $index">
+                    <td ng-bind="user.first_name"></td>
+                    <td ng-bind="user.last_name"></td>
+                    <td ng-bind="user.email"></td>
+                </tr>
+                </tbody>
+            </table>
 
 
-        <!--<ul>
-            <li ng-repeat="user in ctrl.users | filter: myFilter | orderBy: type + order track by $index">
-                {{ user.name | uppercase }}
-                {{ user.last_name | uppercase }}
-                {{ user.money | currency }}
-            </li>
-        </ul>-->
+            <!--<ul>
+                <li ng-repeat="user in ctrl.users | filter: myFilter | orderBy: type + order track by $index">
+                    {{ user.name | uppercase }}
+                    {{ user.last_name | uppercase }}
+                    {{ user.money | currency }}
+                </li>
+            </ul>-->
 
-    </div>
+        </div>
+    </ui-view>
 
 </div>
