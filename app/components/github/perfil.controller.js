@@ -5,11 +5,15 @@
         
         constructor($scope,$timeout, PerfilService){
 
+            this.PerfilService = PerfilService;
 
             PerfilService.getPerfil().then(({data}) => this.perfil = data);
 
-            console.log("this.perfil");
-            console.log(this.perfil);
+        }
+
+        getRepos(){
+
+            this.PerfilService.getReposs().then(({data}) => this.repos = data);
 
         }
         
@@ -17,6 +21,6 @@
 
     PerfilController.$inject = ['$scope', '$timeout', 'PerfilService'];
 
-    angular.module('app.components.github.perfil').controller('PerfilController', PerfilController);
+    angular.module('app.components.perfil').controller('PerfilController', PerfilController);
 
 }());

@@ -14,7 +14,12 @@
                 url: '/users',
                 controller: 'UsersController',
                 controllerAs: 'ctrl',
-                templateUrl: 'components/users/users.html'
+                templateUrl: 'components/users/users.html',
+                resolve: {
+                    users: ['UsersService', function (UsersService) {
+                        return UsersService.getPeople().then(({data}) => data);
+                    }]
+                }
             })
             .state('users.profile', {
                 url: '/profile/:id',

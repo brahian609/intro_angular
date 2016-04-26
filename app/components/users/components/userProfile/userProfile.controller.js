@@ -9,6 +9,8 @@
                 this.user = response;
             });
 
+            UsersService.getFrameworks().then(response => this.frameworks = response);
+
         }
         
     }

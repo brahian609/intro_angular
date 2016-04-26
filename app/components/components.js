@@ -1,7 +1,7 @@
 (function () {
     'user strict';
 
-    angular.module('app.components', ['app.components.users', 'app.components.github.perfil']);
+    angular.module('app.components', ['app.components.users', 'app.components.perfil']);
 
 }());
 

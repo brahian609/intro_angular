@@ -1,7 +1,7 @@
 (function () {
     'user strict';
 
-    angular.module('app.components.github.perfil').config(config);
+    angular.module('app.components.perfil').config(config);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -14,7 +14,7 @@
                 url: '/perfil',
                 controller: 'PerfilController',
                 controllerAs: 'ctrl',
-                templateUrl: 'components/github/perfil/perfil.html'
+                templateUrl: 'components/github/perfil.html'
             });
     }
 

@@ -3,15 +3,15 @@
     
     class UsersController {
         
-        constructor($scope,$timeout, UsersService, versions, $state){
+        constructor($scope,$timeout, UsersService, versions, $state, users){
 
             this.$state   = $state;
             this.versions = versions;
 
-            UsersService.getPeople().then(({data}) => this.users = data);
+            console.log("users");
+            console.log(users);
 
-            console.log("this.users");
-            console.log(this.users);
+            this.users = users;
 
         }
 
@@ -21,7 +21,7 @@
         
     }
 
-    UsersController.$inject = ['$scope', '$timeout', 'UsersService', 'versions', '$state'];
+    UsersController.$inject = ['$scope', '$timeout', 'UsersService', 'versions', '$state', 'users'];
 
     angular.module('app.components.users').controller('UsersController', UsersController);
 

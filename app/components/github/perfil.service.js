@@ -20,10 +20,22 @@
             });
         }
 
+        getReposs() {
+            return this.$http({
+                method: 'GET',
+                url: 'https://api.github.com/users/brahian609/repos'
+            }).then(function (response) {
+                return response;
+            }, function (error) {
+                console.log("--- error ---");
+                console.log(error);
+            });
+        }
+
     }
 
     PerfilService.$inject = ['$q', '$http'];
 
-    angular.module('app.components.github.perfil').service('PerfilService',PerfilService);
+    angular.module('app.components.perfil').service('PerfilService',PerfilService);
 
 }());
