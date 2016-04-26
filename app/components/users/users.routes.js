@@ -15,6 +15,12 @@
                 controller: 'UsersController',
                 controllerAs: 'ctrl',
                 templateUrl: 'components/users/users.html'
+            })
+            .state('users.profile', {
+                url: '/profile/:id',
+                controller: 'UsersController',
+                controllerAs: 'ctrl',
+                templateUrl: 'components/users/users.html'
             });
     }
 
