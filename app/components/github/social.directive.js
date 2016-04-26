@@ -24,6 +24,10 @@
 
         function link(scope, element, attrs) {
 
+            element.on('click', function (e) {
+                alert('click con directiva');
+            })
+
         }
 
     }

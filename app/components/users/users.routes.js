@@ -17,7 +17,7 @@
                 templateUrl: 'components/users/users.html',
                 resolve: {
                     users: ['UsersService', function (UsersService) {
-                        return UsersService.getPeople().then(({data}) => data);
+                        return UsersService.getPeople().then(({data}) => this.users = data);
                     }]
                 }
             })

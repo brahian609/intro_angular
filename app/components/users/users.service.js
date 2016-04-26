@@ -32,18 +32,6 @@
             });
         }
 
-        getFrameworks() {
-            return this.$http({
-                method: 'GET',
-                url: 'http://192.168.80.59:1989/frameworks'
-            }).then(function (response) {
-                return response.data;
-            }, function (error) {
-                console.log("--- error ---");
-                console.log(error);
-            });
-        }
-
     }
 
     UsersService.$inject = ['$q', '$http'];

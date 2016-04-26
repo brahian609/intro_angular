@@ -1,8 +1,8 @@
 (function () {
     'user strict';
-    
+
     class UsersController {
-        
+
         constructor($scope,$timeout, UsersService, versions, $state, users){
 
             this.$state   = $state;
@@ -18,7 +18,7 @@
         goProfile(id){
             this.$state.go('users.profile', {id});
         }
-        
+
     }
 
     UsersController.$inject = ['$scope', '$timeout', 'UsersService', 'versions', '$state', 'users'];
