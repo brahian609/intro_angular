@@ -25,10 +25,7 @@
                 method: 'GET',
                 url: 'server/people.json'
             }).then(function ({data}) {
-                var user = data.filter(function (user) {
-                    return user.id === Number(id);
-                })[0];
-                return user;
+                return data.filter(user => user.id === Number(id))[0];
             }, function (error) {
                 console.log("--- error ---");
                 console.log(error);
